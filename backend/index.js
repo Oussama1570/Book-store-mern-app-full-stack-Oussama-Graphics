@@ -5,7 +5,17 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const port = process.env.PORT || 5000;
 require('dotenv').config()
+ 
 
+// 1. Define your frontend URL (or URLs if you have multiple):
+const frontendURL = process.env.FRONTEND_URL || 'https://book-store-mern-app-full-stack-oussama-graphics.vercel.app'; 
+
+// 2. Set up CORS options:
+const corsOptions = {
+  origin: frontendURL, // Allow only your frontend URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Specify the allowed HTTP methods
+  credentials: true // If you need to send cookies or authentication headers (usually false)
+};
 
 // middleware
 app.use(express.json());
