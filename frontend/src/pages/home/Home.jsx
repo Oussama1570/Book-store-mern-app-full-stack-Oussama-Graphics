@@ -18,7 +18,7 @@ const Home = () => {
       });
   }, []);
 
-  const latestProducts = product.slice(0, 3);
+  
 
   return (
     <>
